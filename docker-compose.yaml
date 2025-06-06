@@ -14,10 +14,12 @@ services:
       timeout: 10s
       retries: 5
   back:
+    build: ./rhum-back
     image: baptl08/rhum-back
     container_name: rhum_back
-    env_file:
-      - ./.docker/env/.env
+    # Pour EC2
+    # env_file:
+    #   - ./.docker/env/back.env
     depends_on:
       db:
         condition: service_healthy
@@ -26,10 +28,12 @@ services:
     networks:
       - rhum_network
   front:
+    build: ./rhum-app
     image: baptl08/rhum-app
     container_name: rhum_front
-    env_file:
-      - ./.docker/env/.env.local
+    # Pour EC2
+    # env_file:
+    #   - ./.docker/env/.env.local
     depends_on:
       - back
     ports:
