@@ -16,6 +16,8 @@ services:
   back:
     image: baptl08/rhum-back
     container_name: rhum_back
+    env_file:
+      - ./.docker/env/.env
     depends_on:
       db:
         condition: service_healthy
@@ -26,6 +28,8 @@ services:
   front:
     image: baptl08/rhum-app
     container_name: rhum_front
+    env_file:
+      - ./.docker/env/.env.local
     depends_on:
       - back
     ports:
