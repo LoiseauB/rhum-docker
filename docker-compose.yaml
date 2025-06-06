@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: rhum_database
+    restart: unless-stopped
+    env_file:
+      - ./.docker/env/mysql.env
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - rhum_network
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5
+  back:
+    build: ./rhum-back
+    image: baptl08/rhum-back
+    container_name: rhum_back
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - 3000:80
+    networks:
+      - rhum_network
+  front:
+    build: ./rhum-app
+    image: baptl08/rhum-app
+    container_name: rhum_front
+    depends_on:
+      - back
+    ports:
+      - 80:80
+    networks:
+      - rhum_network
+networks:
+  rhum_network:
+    driver: bridge
+volumes:
+  dbdata: {}

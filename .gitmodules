@@ -1,0 +1,6 @@
+[submodule "rhum-app"]
+	path = rhum-app
+	url = https://github.com/LoiseauB/rhum..git
+[submodule "rhum-back"]
+	path = rhum-back
+	url = https://github.com/LoiseauB/rhum-back.git
