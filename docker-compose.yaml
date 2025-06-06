@@ -14,7 +14,6 @@ services:
       timeout: 10s
       retries: 5
   back:
-    build: ./rhum-back
     image: baptl08/rhum-back
     container_name: rhum_back
     depends_on:
@@ -25,7 +24,6 @@ services:
     networks:
       - rhum_network
   front:
-    build: ./rhum-app
     image: baptl08/rhum-app
     container_name: rhum_front
     depends_on:
