@@ -31,6 +31,7 @@ pipeline {
                         // Upload files once to reduce redundant SCP commands
                         sh '''
                         scp -o StrictHostKeyChecking=no ${DockerComposeFile} ubuntu@${EC2_IP}:/home/ubuntu
+                        scp -o StrictHostKeyChecking=no ./.docker/env/mysql.env ubuntu@${EC2_IP}:/home/ubuntu/.docker/env/mysql.env
                         ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} "docker compose down"
                         ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} "docker compose up -d"
                         '''
