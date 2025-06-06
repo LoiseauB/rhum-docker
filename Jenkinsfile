@@ -16,8 +16,8 @@ pipeline {
                     echo "Building and Pushing Image to DockerHub..."
                     withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh "echo $PASS | docker login -u $USER --password-stdin"
-                        sh "docker buildx build --platform linux/amd64 -t ${ImageRegistry}/rhum-back:${BUILD_NUMBER} ./rhum-back/Dockerfile --push"
-                        sh "docker buildx build --platform linux/amd64 -t ${ImageRegistry}/rhum-app:${BUILD_NUMBER} ./rhum-app/Dockerfile --push"
+                        sh "docker buildx build --platform linux/amd64 -t ${ImageRegistry}/rhum-back:${BUILD_NUMBER} ./rhum-back --push"
+                        sh "docker buildx build --platform linux/amd64 -t ${ImageRegistry}/rhum-app:${BUILD_NUMBER} ./rhum-app --push"
                     }
                 }
             }
