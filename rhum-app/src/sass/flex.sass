@@ -1,0 +1,41 @@
+.flex
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  &-col
+    flex-direction: column
+
+.justify
+  &-center
+    justify-content: center
+  &-between
+    justify-content: space-between
+  &-end
+    justify-content: flex-end
+  &-evenly
+    justify-content: space-evenly
+
+.items
+  &-center
+    align-items: center
+
+.gap
+  &-0
+    gap: 0rem
+  &-1
+    gap: 0.5rem
+  &-2
+    gap: 1rem
+  &-3
+    gap: 1.5rem
+  &-4
+    @include responsive($md)
+      gap: 2rem
+  &-5
+    gap: 1.5rem
+    @include responsive($md)
+      gap: 4rem
+
+.inline
+  @include responsive($md)
+    display: inline-flex

@@ -1,0 +1,25 @@
+.search
+  &-border
+    border: 2px solid $primary
+  &-size
+    position: relative
+    height: fit-content
+    @include responsive($md)
+      width: 45%
+  &-icon
+    fill: $accent
+  &-input
+    height: 50px
+    @include responsive($md)
+      width: 90%
+  &-palm
+    transform: scaleX(-1)
+    position: absolute
+    width: auto
+    max-height: 15rem
+    @media (max-width: $md)
+      left: -4rem
+      bottom: -2rem
+    @include responsive($md)
+      right: 5vw
+      bottom: 0

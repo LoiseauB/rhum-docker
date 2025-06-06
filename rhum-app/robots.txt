@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /profile/
+Disallow: /register/
+Disallow: /contact/
+Disallow: /plan/
+Disallow: /legals/

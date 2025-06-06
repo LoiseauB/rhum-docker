@@ -1,0 +1,78 @@
+@font-face
+  font-family: 'Poppins'
+  font-weight: 400
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype')
+@font-face
+  font-family: 'Poppins'
+  font-weight: 700
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype')
+@font-face
+  font-family: 'Quicksand'
+  font-weight: 300 700
+  src: url('/fonts/Quicksand-VariableFont_wght.ttf') format('truetype')
+@font-face
+  font-family: 'LilitaOne'
+  font-weight: 400
+  src: url('/fonts/LilitaOne-Regular.ttf') format('truetype')
+
+.text
+  line-height: 1
+  &-body
+    font-family: 'Poppins', sans-serif
+    font-weight: 400
+    font-size: 1rem
+  &-nav
+    font-family: 'Quicksand', sans-serif
+    font-weight: 600
+    font-size: 1.25rem
+    &:hover
+      font-weight: 700
+      cursor: pointer
+    &:active
+      color: $accent
+      scale: 0.98
+  &-title
+    font-family: 'LilitaOne'
+    font-size: 3rem
+    @include responsive($md)
+      font-size: 4rem
+  &-sm
+    font-size: 0.75rem
+  &-md
+    font-size: 1rem
+  &-lg
+    font-size: 1.25rem
+  &-xl
+    font-size: 1.5rem
+    @include responsive($md)
+      font-size: 2.5rem
+  &-2xl
+    font-size: 2rem
+    @include responsive($md)
+      font-size: 3rem
+  &-primary
+    color: $primary
+  &-secondary
+    color: $secondary
+  &-black
+    color: $text
+  &-accent
+    color: $accent
+  &-danger
+    color: rgb(255, 1, 1)
+  &-center
+    text-align: center
+
+.font
+  &-body
+    font-family: 'Poppins', sans-serif
+  &-nav
+    font-family: 'Quicksand', sans-serif
+  &-title
+    font-family: 'LilitaOne'
+  &-regular
+    font-weight: 400
+  &-medium
+    font-weight: 500
+  &-bold
+    font-weight: 700

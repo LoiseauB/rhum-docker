@@ -1,0 +1,40 @@
+.h
+  &-hero
+    min-height: 60vh
+    @include responsive($md)
+      min-height: 40vh
+.w
+  &-home-text
+    width: 266px
+
+.icon
+  &-home
+    fill: $accent
+
+.palm
+  z-index: 0
+  position: absolute
+  width: auto
+  max-height: 20rem 
+  @media (max-width: $md)
+    right: -4rem
+    top: -2rem
+  @include responsive($md)
+    left: 5vw
+    bottom: 0
+
+.barrel
+  z-index: 0
+  position: absolute
+  width: auto
+  @media (max-width: $md)
+    left: -4vw
+    scale: 0.75
+    bottom: -4vh
+  @include responsive($md)
+    bottom: -1vh
+    right: 10vw
+
+.cta
+  &-hero
+    z-index: 2

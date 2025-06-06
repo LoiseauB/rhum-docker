@@ -1,0 +1,22 @@
+header
+  position: fixed
+  width: 100vw
+  z-index: 10
+  border-bottom: $secondary 2px solid
+  padding-top: 1rem
+  padding-bottom: 1rem
+  padding-left: 1rem
+  padding-right: 1rem
+  @include responsive($md)
+    padding-top: 1.75rem
+    padding-bottom: 1.75rem
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+  
+.res-navlink
+  justify-content: space-between
+  width: 100%
+  @include responsive($md)
+    justify-content: flex-start
+    width: fit-content
+    gap: 4rem
